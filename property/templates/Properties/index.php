@@ -11,11 +11,13 @@
                     <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
                         <div class="bg-gradient-primary shadow-primary border-radius-lg pt-4 pb-3">
                             <h6 class="text-white text-capitalize ps-3">Property Mangement</h6>
-                            <?= $this->Html->link(__('Add New Property'), ['controller' => 'properties', 'action' => 'add'], ['class' => 'side-nav-item btn btn-secondary']) ?>
+                            <div class='text-end pe-5'>
+                                <?= $this->Html->link(__('Add New Property'), ['controller' => 'properties', 'action' => 'add'], ['class' => 'side-nav-item btn btn-secondary']) ?>
+                            </div>
                         </div>
                     </div>
                     <div class="card-body px-0 pb-2">
-                        <div class="table-responsive p-0">
+                        <div class="table-responsive p-0" id='showproperty'>
                             <table class="table table-striped">
                                 <thead class="thead-dark">
                                     <tr>
@@ -66,8 +68,6 @@
     </div>
 </main>
 
-<!-- Button trigger modal -->
-
 
 <!-- Edit Modal -->
 <div class="modal fade" id="editmodel" tabindex="-1" role="dialog" aria-labelledby="editmodel" aria-hidden="true">
@@ -82,8 +82,8 @@
             <div class="modal-body">
                 <?= $this->Form->create(null, ['enctype' => 'multipart/form-data', 'id' => 'property-edit']) ?>
                 <fieldset>
-                <input type="hidden" id="imagedd" name="imagedd">
-                        <input type="hidden" id="iddd" name="iddd">
+                    <input type="hidden" id="imagedd" name="imagedd">
+                    <input type="hidden" id="iddd" name="iddd">
                     <legend><?= __('Edit Property') ?></legend>
 
                     <div class="form-group">
@@ -103,7 +103,7 @@
                         <?php echo $this->Form->control('tags'); ?>
                     </div><br>
                 </fieldset>
-                <?= $this->Form->button(__('Submit'), ['class' => 'btn btn-primary']) ?>
+                <?= $this->Form->button(__('Submit'), ['class' => 'btn btn-primary', 'id' => 'btnclick']) ?>
                 <?= $this->Form->end() ?>
             </div>
             <!-- <div class="modal-footer">

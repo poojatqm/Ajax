@@ -41,6 +41,34 @@ class PropertiesController extends AppController
         $properties = $this->Properties->find()->contain(['PropertyCategories']);
         $this->set(compact('properties'));
     }
+    public function active($id=null)
+    {
+        $properties = $this->Properties->find()->contain(['PropertyCategories'])->where(['category_id'=>$id])->all();
+
+        // foreach($properties as $show){
+        //     echo $show->status;
+        // }
+        // die;
+        // dd($properties);
+        
+        
+        $this->set(compact('properties','id'));
+    }
+    public function inactive($id = null)
+    {
+
+        
+        //$property = $this->Properties->get($id);
+        $property = $this->Properties->find()->where(['category_id'=>$id])->all();
+
+        foreach($property as $property){
+            $property->status = 0;
+            $this->Properties->save($property);
+        }
+        
+        
+        return $this->redirect(['controller' => 'property-categories', 'action' => 'categoryStatus',$id,1]);
+    }
 
     public function propertyDetail($id = null){
         $this->loadModel('PropertyCategories');
@@ -56,7 +84,7 @@ class PropertiesController extends AppController
     public function editModal($id = null)
     {
         $this->Model = $this->loadModel('PropertyCategories');
-        if ($this->request->is(['patch', 'post', 'put'])) {
+        if ($this->request->is('ajax')) {
             $data = $this->request->getData();
             // print_r($data);
             // die;

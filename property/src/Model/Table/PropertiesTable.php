@@ -16,6 +16,8 @@ class PropertiesTable extends Table
         $this->setTable('properties');
         $this->setDisplayField('id');
         $this->setPrimaryKey('id');
+
+        
         $this->belongsTo('PropertyCategories', [
             'foreignKey' => 'category_id',
             'joinType' => 'INNER',

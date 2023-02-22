@@ -185,9 +185,9 @@
                           <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Ryan Tompson">
                             <img src="img/team-1.jpg" alt="team1">
                           </a>
-                          <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Romina Hadid">
+                          <!-- <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Romina Hadid">
                             <img src="img/team-2.jpg" alt="team2">
-                          </a>
+                          </a> -->
                           <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Alexander Smith">
                             <img src="img/team-3.jpg" alt="team3">
                           </a>
@@ -289,9 +289,9 @@
                     <tr>
                       <td>
                         <div class="d-flex px-2 py-1">
-                          <div>
+                          <!-- <div>
                             <img src="img/small-logos/logo-spotify.svg" class="avatar avatar-sm me-3" alt="spotify">
-                          </div>
+                          </div> -->
                           <div class="d-flex flex-column justify-content-center">
                             <h6 class="mb-0 text-sm">Launch our Mobile App</h6>
                           </div>
